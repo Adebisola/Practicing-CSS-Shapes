@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>CSS Shapes</title>
+</head>
+
+<body>
+    <div>
+        <p>Circle</p>
+        <p>Pretty simple, we just need to make a square and apply the border-radius 50% in order to give it a circular shape</p>
+        <code>.circle {
+            background-color: #ffff00;
+            width:200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px;
+        }</code>
+        <div class="circle"></div>
+    </div>
+    <div>
+        <p>Semi-Circle</p>
+        <p>Create a rectangle - Apply border radius top left and top right same as height of the rectangle</p>
+        <code>.semi-circle {
+            background-color: rgb(0, 255, 255);
+            width: 200px;
+            height: 100px;
+            border-radius: 100px 100px 0 0;
+        }</code>
+        <div class="semi-circle"></div>
+    </div>
+    <div>
+        <p>Triangle</p>
+        <p>Creating a triangle is little bit tricky - Set height and width as zero - To make this, we draw a solid border and make the side border transparent</p>
+        <code>.triangle {
+            width:0;
+            height:0;
+            border-bottom: 200px solid #f83a3a;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+        }</code>
+        <div class="triangle"></div>
+    </div>
+    <div>
+        <p>Trapezium</p>
+        <p>Same as Triangle but we need some width with this</p>
+        <code>.trapezium {
+            width:100px;
+            height:0;
+            border-bottom: 100px solid #1d0fe7;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+        
+        }</code>
+        <div class="trapezium"></div>
+    </div>
+    <div>
+        <p>Parallelogram</p>
+        <p>Create a rectangle and add some skew to it</p>
+        <code>.parallelogram {
+            background-color: rgb(136, 7, 136);
+            width:200px;
+            height: 100px;
+            transform: skewX(-20deg);
+            margin: 20px;
+        }</code>
+        <div class="parallelogram"></div>
+    </div>
+    <div id="Hexagonn">
+        <p>Hexagon</p>
+        <p>- Creating hexagon is very easy - We need to make two trapeziums of same size but make sure that other trapezium should be upside down - Align them perfectly
+        </p>
+        <code>.hexagon {
+            position: relative;
+            width:100px;
+            height:0;
+            margin-top: 15em;
+            border-top: 120px solid #f01141;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+        }
+        .hexagon::before {
+            position: absolute;
+            width:100px;
+            height:0;
+            border-bottom: 120px solid rgb(153, 9, 9);
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            content: "";
+            left:-100px ;
+            top:-240px;
+        }</code>
+        <div class="hexagon"></div>
+    </div>
+    <div>
+        <p>Leaf</p>
+        <p>Create a square - Apply larger border-radius at top-left and bottom-right corner</p>
+        <code>.leaf {
+            width:200px;
+            height:200px;
+            background: rgb(1, 46, 1);
+            border-radius: 250px 0 250px 0;
+        }</code>
+        <div class="leaf"></div>
+    </div>
+    <div>
+        <p>Drop</p>
+        <p>Create a square - Apply 50% border-radius to all the sides except one side - Rotate in such a manner so that tip comes to top</p>
+        <code>.drop {
+            width:100px;
+            height:100px;
+            background: rgb(60, 100, 133);
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+        }</code>
+        <div class="drop"></div>
+    </div>
+    <div id="Heart">
+        <p>Heart</p>
+        <p>Create a rectangle and apply circular border at top - Rotate it 45deg - Create another same rectangle with circular border and rotate in 45deg in other direction - Align both of them</p>
+        <code>.heart {
+            background: brown;
+            width: 80px;
+            height: 120px;
+            border-radius: 200px 200px 0 0;
+            transform: rotate(45deg);
+            position: relative;
+        }
+        .heart::before {
+            content: "";
+            background:red;
+            width: 80px;
+            height: 120px;
+            border-radius: 200px 200px 0 0;
+            transform: rotate(-90deg);
+            position: absolute;
+            left: -20px;
+            top:20px;
+        }</code>
+        <div class="heart"></div>
+    </div>
+    <div id="STAR">
+        <p>Star</p>
+        <p>Create two triangle upside down - Align second triangle in the middle of the first one</p>
+        <code>#STAR {
+            margin: 5em;
+        }
+        .star {
+            width: 0;
+            height: 0;
+            position: relative;
+            border-bottom: solid 160px rgb(3, 32, 65);
+            border-left: solid transparent 100px;
+            border-right: solid transparent 100px;
+        }
+        .star::after {
+        position: absolute;
+        content: "";
+        border-top: solid 160px rgb(3, 32, 65);
+            border-left: solid transparent 100px;
+            border-right: solid transparent 100px;
+            left: -100px;
+            top:50px;
+        
+        }</code>
+        <div class="star"></div>
+    </div>
+    <div id="DIAMOND">
+        <p>Diamond</p>
+        <p>Combine a trapezium and a triangle</p>
+        <code>#DIAMOND {
+            margin: 10em;
+        }
+        .diamond {
+            border-style: solid;
+            position: relative;
+            height: 0;
+            width:100px;
+            border-width: 0 50px 50px 50px;
+            border-color: transparent transparent rgb(170, 4, 4) transparent;
+        }
+        .diamond::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width:120px 100px 0px 100px;
+            border-color:  rgb(170, 4, 4) transparent transparent transparent;
+            top:50px;
+            left:-50px
+        }</code>
+        <div class="diamond"></div>
+
+    </div>
+    <div>
+        <p>Moon</p>
+        <p>Transparent background - Apply box shadow</p>
+        <code>.moon {
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: 20px 10px 0 0 rgb(101, 101, 102);
+        }</code>
+        <div class="moon"></div>
+    </div>
+    <div id="CROSS">
+        <p>Cross</p>
+        <p>Create two rectangles - Place them over each other vetically and horizontally - Rotate 90deg</p>
+        <code>#CROSS {
+            margin: 3em;
+        }
+        .cross {
+            margin: 4em;
+            position: relative;
+            width: 100px;
+            height: 20px;
+            background: black;
+            transform: rotate(90deg);
+        }
+        .cross:after {
+            position: absolute;
+            content: "";
+            width: 100px;
+            height: 20px;
+            background: black;
+            top:0;
+            left:0;
+            transform: rotate(90deg);
+        }</code>
+        <div class="cross"></div>
+    </div>
+
+</body>
+
+</html>
